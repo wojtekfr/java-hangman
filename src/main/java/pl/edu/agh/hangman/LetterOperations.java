@@ -1,5 +1,6 @@
 package pl.edu.agh.hangman;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LetterOperations {
@@ -16,14 +17,17 @@ public class LetterOperations {
 		} while (letter.length() == 1);
 		return letter;
 	}
-	public int verifyLetter(String letter, String word) {
-		
+	
+	public ArrayList<Integer> verifyLetter(String letter, String word) {
+		ArrayList<Integer> listOfIndexes = new ArrayList<Integer>();
+ 		
 		for (int index = 1; index <= word.length(); index++) {
 			if (word.charAt(index) == letter.charAt(0)) {
-					return index; 
+				listOfIndexes.add(index);
 			}
 		}
-		return 0;
+		
+		return listOfIndexes;
 	}
 	
 
