@@ -11,7 +11,7 @@ public class LetterOperations {
 	public static String getLetter() {
 		do {
 			System.out.print("guess> ");
-			letter = scanner.next();
+			letter = scanner.nextLine();
 			if (letter.length() != 1) {
 				System.out.println("Podaj tylko jedną literę");
 			}
