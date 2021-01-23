@@ -10,7 +10,7 @@ public class LetterOperations {
 
 	public static String getLetter() {
 		do {
-			System.out.print("Podaj literę: ");
+			System.out.print("guess> ");
 			letter = scanner.next();
 			if (letter.length() != 1) {
 				System.out.println("Podaj tylko jedną literę");

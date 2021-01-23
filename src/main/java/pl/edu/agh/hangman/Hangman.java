@@ -1,6 +1,7 @@
 package pl.edu.agh.hangman;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Hangman {
@@ -79,9 +80,19 @@ public class Hangman {
     		System.out.println();
     		System.out.println();
     		gameWordArray = drawLetter(LetterOperations.getLetter(),gameWordArray, word);
+    		if (!Arrays.stream(gameWordArray).anyMatch("_"::equals)) {
+    			
+    			printStringArray(gameWordArray);
+    			System.out.println("You won !");
+   
+    			break;
+    		}
     		
     	}
-    
+    	
+    	if (counter==6 ) {
+			System.out.println("Game over !");
+    	}
     }
 
     public static String[] drawEmptyWord(String word) {
