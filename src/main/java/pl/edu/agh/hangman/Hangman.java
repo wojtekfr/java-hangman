@@ -1,9 +1,11 @@
 package pl.edu.agh.hangman;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Hangman {
-	
+
+	static int counter = 0;
 	
     public static final String[] HANGMANPICS = new String[]{
     		
@@ -60,18 +62,27 @@ public class Hangman {
     };
 
     public static void main(String[] args) {
-        printStringArray(new String[]{"_", "_", "_"});
+      // printStringArray(new String[]{"_", "_", "_"});
+    	List<String> words = FileWordReader.getListOfWords();
+    	String word = RandomWord.getRandomWord(words);
+    	String[] gameWordArray = drawEmptyWord(word);
+    	
+    	
+    	System.out.println(word);
+    	
+    	
+    	
+    	    	
+    	while (counter < 7) {
+    		System.out.println(HANGMANPICS[counter]);	
+    		printStringArray(gameWordArray);
+    		System.out.println();
+    		System.out.println();
+    		gameWordArray = drawLetter(LetterOperations.getLetter(),gameWordArray, word);
+    		
+    	}
+    
     }
-
-    public static String w(String word){
-        int num = word.length();
-        String emptyWord = "";
-        for (int i=0; i<num; i++){
-            emptyWord += "_";
-        }
-        return emptyWord;
-    }
-
 
     public static String[] drawEmptyWord(String word) {
         int num = word.length();
@@ -82,13 +93,15 @@ public class Hangman {
         return emptyWord;
     }
 
-    public String[] drawLetter(String letter, String[] wordArray, String word) {
+    public static String[] drawLetter(String letter, String[] wordArray, String word) {
         List<Integer> indexes = LetterOperations.verifyLetter(letter, word);
         if (indexes.isEmpty()) {
-            return wordArray;
+            counter++;
+        	return wordArray;
         } else {
             for (Integer index: indexes) {
                 wordArray[index] = letter;
+                
             }
         }
         return wordArray;
