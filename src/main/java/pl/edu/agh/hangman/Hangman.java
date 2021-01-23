@@ -60,10 +60,22 @@ public class Hangman {
     public static void main(String[] args) {
     }
     	
-    	public static String drawEmptyWord(String word) {
-    	int numberOfDashes = word.length();
     		
+    	public static String drawEmptyWord(String word){
+    	    int num = word.length();
+    	    String emptyWord = "";
+    	    for (int i=0; i<num; i++){
+    	        emptyWord += "_";
+    	    }
+    	    return emptyWord;
+    	}
     	
-    	
+    	public String drawLetter(char letter, String word){
+    	     = word.length();
+    	    String emptyWord = "";
+    	    for (int i=0; i<num; i++){
+    	        emptyWord += "_";
+    	    }
+    	    return emptyWord;
     }
 }
