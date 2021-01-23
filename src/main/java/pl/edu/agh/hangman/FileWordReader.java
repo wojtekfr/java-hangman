@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class FileWordReader {
 
-  private static List<String> getListOfWords() {
+  public static List<String> getListOfWords() {
     File fileToRead = new File("src/main/resources/slowa.txt");
     List<String> listOfWords = new ArrayList<>();
     try {
