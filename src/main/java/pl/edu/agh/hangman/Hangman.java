@@ -1,8 +1,11 @@
 package pl.edu.agh.hangman;
 
 public class Hangman {
-
+	
+	
     public static final String[] HANGMANPICS = new String[]{
+    		
+    		
             "  +---+\n" +
                     "  |   |\n" +
                     "      |\n" +
@@ -55,5 +58,12 @@ public class Hangman {
     };
 
     public static void main(String[] args) {
+    }
+    	
+    	public static String drawEmptyWord(String word) {
+    	int numberOfDashes = word.length();
+    		
+    	
+    	
     }
 }
