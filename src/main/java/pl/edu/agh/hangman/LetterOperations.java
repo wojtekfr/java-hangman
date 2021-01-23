@@ -17,16 +17,16 @@ public class LetterOperations {
 		} while (letter.length() == 1);
 		return letter;
 	}
-	
-	public ArrayList<Integer> verifyLetter(String letter, String word) {
+
+	public static ArrayList<Integer> verifyLetter(String letter, String word) {
 		ArrayList<Integer> listOfIndexes = new ArrayList<Integer>();
- 		
+
 		for (int index = 1; index <= word.length(); index++) {
 			if (word.charAt(index) == letter.charAt(0)) {
 				listOfIndexes.add(index);
 			}
 		}
-		
+
 		return listOfIndexes;
 	}
 	
